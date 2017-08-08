@@ -266,9 +266,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Classes\Context.cs" />
+    <Compile Include="App_Classes\Sepet.cs" />
     <Compile Include="App_Classes\Settings.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -373,6 +375,13 @@
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\ZeonTicaret.WebUI.dll.config" />
+    <Content Include="Views\Home\Sepet.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Home\YeniUrunler.cshtml" />
+    <Content Include="Views\Home\Servisler.cshtml" />
+    <Content Include="Views\Home\Markalar.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\SliderResimleri.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -387,6 +396,7 @@
     <Folder Include="Content\Admin\fonts\" />
     <Folder Include="Content\Admin\img\" />
     <Folder Include="Content\Admin\js\" />
+    <Folder Include="Content\SliderResim\" />
     <Folder Include="Content\UrunResim\Kucuk\" />
     <Folder Include="Content\Zeon\css\" />
     <Folder Include="Content\Zeon\images\" />
