@@ -22,15 +22,33 @@ namespace ZeonTicaret.WebUI.App_Classes
 
         public List<SepetItem> Urunler
         {
-            get { return urunler=new List<SepetItem>(); }
+            get { return urunler; }
             set { urunler = value; }
         }
         public void SepeteEkle(SepetItem si)
         {
-            if (Urunler.Any(x=>x.Urun.Id==si.Urun.Id))
-                Urunler.FirstOrDefault(x => x.Urun.Id == si.Urun.Id).Adet++;
+            if (HttpContext.Current.Session["AktifSepet"] != null)
+            {
+                Sepet s = (Sepet)HttpContext.Current.Session["AktifSepet"];
+
+                if (s.Urunler.Any(x => x.Urun.Id == si.Urun.Id))
+                {
+                    s.Urunler.FirstOrDefault(x => x.Urun.Id == si.Urun.Id).Adet++;
+                }
+              
+                else
+                {
+                    s.Urunler.Add(si);
+                }
+            }
             else
-              Urunler.Add(si);                           
+            {
+                Sepet s = new Sepet();
+                s.Urunler.Add(si);
+                HttpContext.Current.Session["AktifSepet"] = s;
+            }
+            
+                                        
         }
         public decimal ToplamTutar
         {

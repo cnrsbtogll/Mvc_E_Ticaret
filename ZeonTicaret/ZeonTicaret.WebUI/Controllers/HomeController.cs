@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ZeonTicaret.WebUI.App_Classes;
+using ZeonTicaret.WebUI.Models;
 
 namespace ZeonTicaret.WebUI.Controllers
 {
@@ -38,6 +39,22 @@ namespace ZeonTicaret.WebUI.Controllers
             var data = Context.Baglanti.Markas.ToList();
             return PartialView(data);
         }     
-       
+       public void SepeteEkle(int id)
+        {
+            SepetItem si = new SepetItem();
+            Urun u = Context.Baglanti.Uruns.FirstOrDefault(x => x.Id == id);
+            si.Urun = u;
+            si.Adet = 1;
+            si.Indirim = 0;
+            Sepet s = new Sepet();
+            s.SepeteEkle(si);            
+        }
+        public PartialViewResult MiniSepetWidget()
+        {
+            if (HttpContext.Session["AktifSepet"] != null)
+                return PartialView((Sepet)HttpContext.Session["AktifSepet"]);
+            else
+                return PartialView();
+        }
     }
 }

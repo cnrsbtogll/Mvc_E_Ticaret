@@ -3,9 +3,26 @@
 <script src="~/Content/Zeon/js/jquery-1.10.0.min.js"></script>
 <script>
     $(document).ready(function myfunction() {
-        $("#sepeteAt").click(function myfunction() {
-            var id = $(this).attr("name");
-            alert(id);
+        $(".sepeteAt").click(function myfunction() {
+            var uid = $(this).attr("name");
+            $.ajax({
+                type: "GET",
+                url: "/Home/SepeteEkle",
+                data: { id: uid },
+                success: function myfunction() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/Home/MiniSepetWidget",
+                        success: function VeriGetir(veri) {
+                            $(".cart-all").html('');
+                            $(".cart-all").html(veri);
+                        }
+                    });
+                },
+                error: function myfunction() {
+                    alert("Ürün Sepete Eklenemedi.");
+                }
+            });
         });
     });
 </script>
@@ -40,7 +57,7 @@
                                     <h1><a href="/Home/UrunDetay/@urn.Adi">@urn.Adi</a></h1>
                                     <p>@urn.Aciklama</p>
                                     <div class="product-price">
-                                        <a href="#" name="@urn.Id" id="sepeteAt"><i class="icon-257" title="add to cart"></i></a>
+                                        <a name="@urn.Id" class="sepeteAt"><i class="icon-257" title="add to cart"></i></a>
                                         
                                        @urn.SatisFiyat
                                     </div>
