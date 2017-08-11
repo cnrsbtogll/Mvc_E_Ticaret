@@ -131,3 +131,36 @@ C:\Users\KANTİN\Documents\Visual Studio 2015\Projects\ZeonTicaret\ZeonTicaret.W
 C:\Users\KANTİN\Documents\Visual Studio 2015\Projects\ZeonTicaret\ZeonTicaret.WebUI\obj\Debug\ZeonTicaret.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\KANTİN\Documents\Visual Studio 2015\Projects\ZeonTicaret\ZeonTicaret.WebUI\obj\Debug\ZeonTicaret.WebUI.dll
 C:\Users\KANTİN\Documents\Visual Studio 2015\Projects\ZeonTicaret\ZeonTicaret.WebUI\obj\Debug\ZeonTicaret.WebUI.pdb
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\ApplicationInsights.config
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\csc.exe
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\System.Collections.Immutable.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\vbc.exe
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\VBCSCompiler.exe
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\roslyn\VBCSCompiler.exe.config
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\ZeonTicaret.WebUI.dll.config
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\ZeonTicaret.WebUI.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\ZeonTicaret.WebUI.pdb
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\EntityFramework.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\EntityFramework.SqlServer.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\Microsoft.AI.DependencyCollector.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\Microsoft.AI.Web.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\Microsoft.AI.WindowsServer.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\Microsoft.ApplicationInsights.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\System.Web.Razor.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\System.Web.Webpages.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\System.Web.Webpages.Deployment.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\System.Web.Webpages.Razor.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\System.Web.Helpers.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\bin\System.Web.Mvc.xml
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\obj\Debug\ZeonTicaret.WebUI.csprojResolveAssemblyReference.cache
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\obj\Debug\ZeonTicaret.WebUI.dll
+D:\et\ZeonTicaret\ZeonTicaret.WebUI\obj\Debug\ZeonTicaret.WebUI.pdb
