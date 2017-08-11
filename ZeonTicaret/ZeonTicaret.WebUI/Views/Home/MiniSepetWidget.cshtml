@@ -1,4 +1,33 @@
 ﻿@model ZeonTicaret.WebUI.App_Classes.Sepet
+
+<script src="~/Content/Zeon/js/jquery-1.10.0.min.js"></script>
+<script>
+    $(document).ready(function myfunction() {
+        $(".urunSil").click(function UrunSil() {
+            var uid = $(this).attr("name");
+            $.ajax({
+                type: "GET",
+                url: "/Home/SepetUrunAdetDusur",
+                data: { id: uid },
+                success: function myfunction() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/Home/MiniSepetWidget",
+                        success: function myfunction(veri) {
+                            $(".cart-all").html('');
+                            $(".cart-all").html(veri);
+                        }
+                    });
+                },
+                error: function myfunction() {
+                    alert("error");
+                }
+                
+            });
+        });
+    });
+</script>
+
 <div class="cart-all">
     <i class="icon-19" title="19">
     </i>@if (Model != null)
@@ -33,7 +62,7 @@
                                 <img src="@item.Urun.Resims.FirstOrDefault(x=>x.Varsayilan==true).OrtaYol" alt="product name" />
                             }
                         </div>
-                        <button>x</button>                       
+                        <a class="urunSil" name="@item.Urun.Id">x</a>                       
                         <a href="/Home/UrunDetay/@item.Urun.Adi">@item.Urun.Adi</a>
                         <p>Tutar: @item.Tutar.ToString("C2")</p>
                         <p>Adet : @item.Adet</p>

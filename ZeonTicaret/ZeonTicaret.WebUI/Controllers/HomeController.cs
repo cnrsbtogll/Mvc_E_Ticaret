@@ -49,6 +49,23 @@ namespace ZeonTicaret.WebUI.Controllers
             Sepet s = new Sepet();
             s.SepeteEkle(si);            
         }
+        public void SepetUrunAdetDusur(int id)
+        {
+            if(HttpContext.Session["AktifSepet"]!=null)
+            {
+                Sepet s = (Sepet)HttpContext.Session["AktifSepet"];
+                if (s.Urunler.FirstOrDefault(x => x.Urun.Id == id).Adet > 1)
+                { 
+                    s.Urunler.FirstOrDefault(x => x.Urun.Id == id).Adet--;
+                }
+                else
+                {
+                    SepetItem si = s.Urunler.FirstOrDefault(x => x.Urun.Id == id);
+                    s.Urunler.Remove(si);
+                }
+            }
+        }
+
         public PartialViewResult MiniSepetWidget()
         {
             if (HttpContext.Session["AktifSepet"] != null)

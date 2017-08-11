@@ -249,6 +249,23 @@
     <Content Include="Content\Zeon\index-4.html" />
     <Content Include="Content\Zeon\index-5.html" />
     <Content Include="Content\Zeon\index.html" />
+    <Content Include="Content\Zeon\js\bootstrap.js" />
+    <Content Include="Content\Zeon\js\farbtastic\farbtastic-dev.js" />
+    <Content Include="Content\Zeon\js\farbtastic\farbtastic.css" />
+    <Content Include="Content\Zeon\js\farbtastic\farbtastic.js" />
+    <Content Include="Content\Zeon\js\farbtastic\marker.png" />
+    <Content Include="Content\Zeon\js\farbtastic\mask.png" />
+    <Content Include="Content\Zeon\js\farbtastic\wheel.png" />
+    <Content Include="Content\Zeon\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Content\Zeon\js\jquery-1.10.0.min.js" />
+    <Content Include="Content\Zeon\js\jquery-ui.min.js" />
+    <Content Include="Content\Zeon\js\jquery.swipebox.min.js" />
+    <Content Include="Content\Zeon\js\masonry.pkgd.min.js" />
+    <Content Include="Content\Zeon\js\modernizr.custom.63321.js" />
+    <Content Include="Content\Zeon\js\options-back.js" />
+    <Content Include="Content\Zeon\js\options.js" />
+    <Content Include="Content\Zeon\js\placeholder.js" />
+    <Content Include="Content\Zeon\js\plugins.js" />
     <Content Include="Content\Zeon\post.html" />
     <Content Include="Content\Zeon\pricing.html" />
     <Content Include="Content\Zeon\product.html" />
@@ -402,7 +419,6 @@
     <Folder Include="Content\UrunResim\Kucuk\" />
     <Folder Include="Content\Zeon\css\" />
     <Folder Include="Content\Zeon\images\" />
-    <Folder Include="Content\Zeon\js\" />
     <Folder Include="Content\Zeon\php\" />
   </ItemGroup>
   <ItemGroup>
