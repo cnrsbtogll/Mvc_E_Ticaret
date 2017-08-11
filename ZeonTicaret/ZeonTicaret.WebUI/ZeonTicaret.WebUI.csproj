@@ -401,6 +401,7 @@
     <Content Include="Views\Admin\SliderResimleri.cshtml" />
     <Content Include="Views\Home\MiniSepetWidget.cshtml" />
     <Content Include="Views\Admin\UrunGuncelle.cshtml" />
+    <Content Include="Views\Home\UrunDetay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

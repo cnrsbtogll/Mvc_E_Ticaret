@@ -73,5 +73,11 @@ namespace ZeonTicaret.WebUI.Controllers
             else
                 return PartialView();
         }
+        public ActionResult UrunDetay(string id)
+        {
+            Urun u = Context.Baglanti.Uruns.FirstOrDefault(x => x.Adi == id);
+            ViewBag.OzellikTipler = Context.Baglanti.OzellikTips.Where(x => x.KategoriID == u.KategoriID);
+            return View(u);
+        }
     }
 }
