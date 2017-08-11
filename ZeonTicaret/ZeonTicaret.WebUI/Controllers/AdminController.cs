@@ -228,5 +228,11 @@ namespace ZeonTicaret.WebUI.Controllers
                 }
             return RedirectToAction("SliderResimleri");
         }
+        public ActionResult UrunSil(int id)
+        {
+            Context.Baglanti.Uruns.Remove(Context.Baglanti.Uruns.Find(id));
+            Context.Baglanti.SaveChanges();
+            return View("Urunler", Context.Baglanti.Uruns);
+        }
     }
 }
