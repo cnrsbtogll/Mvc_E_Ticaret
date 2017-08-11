@@ -234,5 +234,22 @@ namespace ZeonTicaret.WebUI.Controllers
             Context.Baglanti.SaveChanges();
             return View("Urunler", Context.Baglanti.Uruns);
         }
+        public ActionResult UrunGuncelle(int id)
+        {
+            return View("UrunGuncelle", Context.Baglanti.Uruns.Find(id));
+        }    
+        [HttpPost]
+        public ActionResult UrunGuncelle(Urun urn)
+        {
+            var mevcut = Context.Baglanti.Uruns.Find(urn.Id);
+            mevcut.Adi = urn.Adi;
+            mevcut.Aciklama = urn.Aciklama;
+            mevcut.AlisFiyat = urn.AlisFiyat;
+            mevcut.EklenmeTarihi = urn.EklenmeTarihi;
+            mevcut.SatisFiyat = urn.SatisFiyat;
+            mevcut.SonKullanmaTarihi = urn.SonKullanmaTarihi;
+            Context.Baglanti.SaveChanges();
+            return View("Urunler", Context.Baglanti.Uruns);
+        }  
     }
 }
