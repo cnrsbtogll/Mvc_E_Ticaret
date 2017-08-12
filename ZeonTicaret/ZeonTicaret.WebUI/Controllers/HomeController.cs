@@ -76,7 +76,37 @@ namespace ZeonTicaret.WebUI.Controllers
         public ActionResult UrunDetay(string id)
         {
             Urun u = Context.Baglanti.Uruns.FirstOrDefault(x => x.Adi == id);
-            ViewBag.OzellikTipler = Context.Baglanti.OzellikTips.Where(x => x.KategoriID == u.KategoriID);
+            List<UrunOzellik> uos = Context.Baglanti.UrunOzelliks.Where(x => x.UrunID == u.Id).ToList();
+            Dictionary<string, List<OzellikDeger>> ozellik = new Dictionary<string, List<OzellikDeger>>();
+            List<OzellikDeger> degers = new List<OzellikDeger>();
+            foreach (UrunOzellik uo in uos)
+            {
+                OzellikTip ot = Context.Baglanti.OzellikTips.FirstOrDefault(x => x.Id == uo.OzellikTipID);
+                bool feriha = false;
+                foreach (var item in ozellik)
+                {
+                    if (item.Key != ot.Adi)
+                        feriha = true;
+                    else
+                        feriha = false;
+                }
+                if (feriha)
+                    degers = new List<OzellikDeger>();
+                foreach (OzellikDeger deger in Context.Baglanti.OzellikDegers.Where(x => x.OzellikTipID == ot.Id).ToList()) 
+                {
+                    OzellikDeger od= Context.Baglanti.OzellikDegers.FirstOrDefault(x => x.OzellikTipID == ot.Id && x.Id == uo.OzellikDegerID);
+                    if(!degers.Any(x=>x.Id==od.Id))
+                        degers.Add(od);
+                }
+                if (ozellik.Any(x => x.Key == ot.Adi))
+                {
+                    ozellik[ot.Adi] = degers;
+                }
+                else
+                ozellik.Add(ot.Adi, degers);
+            }
+            ViewBag.Ozellikler = ozellik;
+            
             return View(u);
         }
     }

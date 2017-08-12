@@ -3,6 +3,35 @@
     ViewBag.Title = "Ürün Detay";
     Layout = "~/Views/Shared/SiteLayout.cshtml";
 }
+@section head{
+<script src="~/Content/Zeon/js/jquery-1.10.0.min.js"></script>
+    <script>
+    $(document).ready(function myfunction() {
+        $(".sepeteAt").click(function myfunction() {
+            var uid = $(this).attr("name");
+            $.ajax({
+                type: "GET",
+                url: "/Home/SepeteEkle",
+                data: { id: uid },
+                success: function myfunction() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/Home/MiniSepetWidget",
+                        success: function VeriGetir(veri) {
+                            $(".cart-all").html('');
+                            $(".cart-all").html(veri);
+                            alert("Ürün Sepete Eklendi.");
+                        }
+                    });
+                },
+                error: function myfunction() {
+                    alert("Ürün Sepete Eklenemedi.");
+                }
+            });
+        });
+    });
+</script>
+    }
 
 @model ZeonTicaret.WebUI.Models.Urun
 <br /> <br /> <br /> <br /><br /><br /><br />
@@ -36,18 +65,18 @@
             </div>
             <div class="col-md-6">
                 <h2>@Model.Adi</h2>
-                @*@foreach (ZeonTicaret.WebUI.Models.OzellikTip tip in ViewBag.OzellikTipler)
+                @foreach (var tip in ViewBag.Ozellikler)
                 {
                     <div class="sort-dropdown">
-                        <span>@tip.Adi <i class="icon-515" title="515"></i></span>
+                        <span>@tip.Key <i class="icon-515" title="515"></i></span>
                         <ul>
-                            @foreach (var deger in tip.OzellikDegers)
+                            @foreach (var deger in tip.Value)
                             {
                                 <li><a href="#">@deger.Adi</a></li>
                             }                            
-                        </ul>*@
-                    @*</div>
-                }*@
+                        </ul>
+                    </div>
+                }
 
                 
                 <div class="clear"></div>
@@ -63,7 +92,7 @@
                         <div class="product-price">FİYAT : @Model.SatisFiyat.ToString("C2")</div>
                     </div>
                     <div class="col-md-6">
-                        <a class="button-2 sepeteAt">Sepete Ekle</a>
+                        <a class="button-2 sepeteAt" name="@Model.Id">Sepete Ekle</a>
                        
                     </div>
                 </div>
