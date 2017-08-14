@@ -49,12 +49,65 @@ namespace ZeonTicaret.WebUI.Controllers
             Sepet s = new Sepet();
             s.SepeteEkle(si);            
         }
+        public void SepetUrunAdetDusur(int id)
+        {
+            if(HttpContext.Session["AktifSepet"]!=null)
+            {
+                Sepet s = (Sepet)HttpContext.Session["AktifSepet"];
+                if (s.Urunler.FirstOrDefault(x => x.Urun.Id == id).Adet > 1)
+                { 
+                    s.Urunler.FirstOrDefault(x => x.Urun.Id == id).Adet--;
+                }
+                else
+                {
+                    SepetItem si = s.Urunler.FirstOrDefault(x => x.Urun.Id == id);
+                    s.Urunler.Remove(si);
+                }
+            }
+        }
+
         public PartialViewResult MiniSepetWidget()
         {
             if (HttpContext.Session["AktifSepet"] != null)
                 return PartialView((Sepet)HttpContext.Session["AktifSepet"]);
             else
                 return PartialView();
+        }
+        public ActionResult UrunDetay(string id)
+        {
+            Urun u = Context.Baglanti.Uruns.FirstOrDefault(x => x.Adi == id);
+            List<UrunOzellik> uos = Context.Baglanti.UrunOzelliks.Where(x => x.UrunID == u.Id).ToList();
+            Dictionary<string, List<OzellikDeger>> ozellik = new Dictionary<string, List<OzellikDeger>>();
+            List<OzellikDeger> degers = new List<OzellikDeger>();
+            foreach (UrunOzellik uo in uos)
+            {
+                OzellikTip ot = Context.Baglanti.OzellikTips.FirstOrDefault(x => x.Id == uo.OzellikTipID);
+                bool feriha = false;
+                foreach (var item in ozellik)
+                {
+                    if (item.Key != ot.Adi)
+                        feriha = true;
+                    else
+                        feriha = false;
+                }
+                if (feriha)
+                    degers = new List<OzellikDeger>();
+                foreach (OzellikDeger deger in Context.Baglanti.OzellikDegers.Where(x => x.OzellikTipID == ot.Id).ToList()) 
+                {
+                    OzellikDeger od= Context.Baglanti.OzellikDegers.FirstOrDefault(x => x.OzellikTipID == ot.Id && x.Id == uo.OzellikDegerID);
+                    if(!degers.Any(x=>x.Id==od.Id))
+                        degers.Add(od);
+                }
+                if (ozellik.Any(x => x.Key == ot.Adi))
+                {
+                    ozellik[ot.Adi] = degers;
+                }
+                else
+                ozellik.Add(ot.Adi, degers);
+            }
+            ViewBag.Ozellikler = ozellik;
+            
+            return View(u);
         }
     }
 }

@@ -21,6 +21,8 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,600,700,800" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="/Content/Zeon/css/bootstrap.css" />
     <link rel="stylesheet" href="/Content/Zeon/css/style.css" />
+
+    @RenderSection("head",false)
 </head>
 
 <body class="home-blog-show">
@@ -112,25 +114,11 @@
        @{  
            Html.RenderAction("Slider", "Home");
         }
-        <!-- =====================================================================
-                                     END SERVICES
-    ====================================================================== -->
-        
-        @{ 
-            Html.RenderAction("YeniUrunler", "Home");
-        }
+      
+       
 
         @RenderBody()
-        <!-- =====================================================================
-                                     START SERVICES
-        ====================================================================== -->
-        @{ 
-            Html.RenderAction("Servisler", "Home");
-        }
-        
-        <!-- =====================================================================
-                                         END SERVICES
-        ====================================================================== -->        
+           
        
         <!-- =====================================================================
                                         START OUR BRANDS
